@@ -38,7 +38,7 @@ void loop() {
 
     // maak de reeks variabelen voor achter de URL:
     String data = "knikkers=";
-    data = tellerA.getTeller();
+    data = tellerA.getAantal();
 
     // als je meer waarden wilt toevoegen, ziet dat er zo uit:
     //data += "&blabla";
