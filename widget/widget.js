@@ -28,7 +28,7 @@ function setup() {
   wachtijdInput.position(225, 70);
   wachtijdInput.size(50);
 
-  // om de ... milliseconden wordt 'vraagSensorData' uitgevoerd
+  // om de UPDATE_INTERVAL milliseconden wordt 'vraagSensorData' uitgevoerd
   setInterval(vraagSensorData, UPDATE_INTERVAL);
 }
 
@@ -51,6 +51,7 @@ function draw() {
   line(50, 20, 135, 60);
   line(250, 20, 165, 60);
 
+  // toon de teller
   teller.show();
 }
 
@@ -61,7 +62,7 @@ function vraagSensorData() {
   var request = new XMLHttpRequest();
 
   // maak een http-verzoek
-  request.open('GET', '/api/get/sensordata', true)
+  request.open('GET', '/api/get/data', true)
 
   // wat uitvoeren als het antwoord teruggegeven wordt?
   request.onload = function () {
@@ -88,7 +89,7 @@ function stuurNieuweInstellingen() {
   var request = new XMLHttpRequest();
 
   // maak een http-verzoek
-  request.open('GET', '/api/set/instellingen?wachttijd=' + wachtijdInput.value(), true)
+  request.open('GET', '/api/set/data?wachttijd=' + wachtijdInput.value(), true)
 
   // wat uitvoeren als het antwoord teruggegeven wordt?
   request.onload = function () {

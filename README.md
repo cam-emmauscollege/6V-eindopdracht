@@ -7,12 +7,9 @@ In dit repository beheer je het eindproject en plaats je de code voor
 - de server (`server-app.js`)
 - de webwidget (`widget/widget.js`)
 - de knikkerbaan (meerdere bestanden in de map `arduino`)
-- de database (`database/db-creation.sql`)
 
 
 Het verslag schrijf je in `verslag.md`.
-
-De database ontwerp je in `database/db-creation`. Voorgegeven data (om uit te proberen) kun je daar ook in stoppen.
 
 Je werkt in dit project actief met GitHub. Dat betekent dat je vanuit issues en het planbord werkt en tijdens het ontwikkelen op een goede manier gebruik maakt van branches en commits.
 Zorg ervoor dat (voor zowel je groepsleden als de docent) altijd duidelijk is waar je mee bezig bent.
@@ -27,9 +24,6 @@ De server start en stop je met behulp van de debugger. Klik links op het icon me
 
 ## Widget
 Het widget wordt door de server eenmalig als statisch bestand gestuurd naar een browser die erom vraag. De code van de widget wordt niet door GitPod uitgevoerd, maar door het browservenster waarin het widget zichtbaar is. Het testen / debuggen van het widget doe je met de optie 'Javascript-console' van je browser. In Chrome vind je die onder het menu 'Weergave->Ontwikkelaar->Javascript-console' en in Safari onder 'Ontwikkelaar-> Toon Javascript Console'. Je kunt daar ook breakpoints maken en de inhoud van variabelen inspecteren.
-
-## Database
-Voor het uittesten van queries kun je in de terminal van GitPod verbinding maken met je database. Doe dit door het volgende commando in te tikken: `sqlite3 database/database.db`. 
 
 ## Handige links
 * [Tinkercad](https://tinkercad.io) - voor het maken van een virtuele Arduino
