@@ -10,27 +10,24 @@ Lorem ipsum...
 
 ## Idee
 Ons idee was om een knikkerbaan te maken die...
-(gebruik gerust plaatjes)
+(gebruik plaatjes)
 
 
 
-## Evaluaties van scrumplanningen:
+## Planning en evaluatie van sprints:
 
-### week 43
+### sprint 1
 
-### week 44
+### sprint 2
 
-### week 45
-
-### week ...
+### ...
 
 
 
 ## Technische verantwoording
 Geef hier bijvoorbeeld de volgene informatie, maar voel je vrij er informatie aan toe te voegen.
 De Arduino werkt op de volgende manier:
-De knikkerbaan en de widget wisselen de volgende data met elkaar uit:
-We hebben dat op deze manier genormaliseerd in een database opgenomen (neem een strokendiagram op). De reden dat we voor ... kiezen is... 
+De knikkerbaan en de widget wisselen de volgende data met elkaar uit: 
 Uitdagingen die we tegenkwamen:
 
 
