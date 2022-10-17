@@ -1,11 +1,10 @@
 
 // globale variabelen
-var aantalKnikkersBoven = 0;    // aantal knikkers dat bovenin is binnengekomen
-var wachttijd = 15;             // wachttijd voor het poortje in seconden
+var aantalKnikkers = 0;    // aantal knikkers dat bovenin is binnengekomen
+var poortIsOpen = false;
 const UPDATE_INTERVAL = 5000;   // tijd in milliseconden tussen het door widget opvragen van gegevens
 var button;
 var teller;
-var wachtijdInput;
 
 
 /**
@@ -17,16 +16,14 @@ function setup() {
   // Maak het canvas van je widget
   createCanvas(300, 600);
 
+  // maak een nieuw tellerobject
+  // op de positie (150, 50)
   teller = new Teller(150, 50);
 
   // maak een button en stel deze in
-  button = createButton('Verstuur');
-  button.position(250, 575);
+  button = createButton('Open poort');
+  button.position(200, 300);
   button.mouseClicked(stuurNieuweInstellingen);
-
-  wachtijdInput = createInput();
-  wachtijdInput.position(225, 70);
-  wachtijdInput.size(50);
 
   // om de UPDATE_INTERVAL milliseconden wordt 'vraagSensorData' uitgevoerd
   setInterval(vraagSensorData, UPDATE_INTERVAL);
@@ -42,7 +39,7 @@ function draw() {
   // schrijf hieronder de code van je widget
   // hieronder wordt schematisch een knikkerbaan getekend
 
-  // achtergrond: houtkleur, kies gerust iets anders
+  // achtergrond: houtkleur, kies vooral iets anders
   background(175, 144, 105);
 
   // twee dikke strepen als 'opvangbak'
@@ -53,6 +50,20 @@ function draw() {
 
   // toon de teller
   teller.show();
+}
+
+function buttonGeklikt() {
+  // verander waar de van poortIsOpen
+  if (poortIsOpen == true) {
+    poortIsOpen = false;
+  }
+  else {
+    poortIsOpen = true;
+  }
+
+  // stuur de nieuwe waarde door
+  stuurNieuweInstellingen();
+
 }
 
 
@@ -71,9 +82,10 @@ function vraagSensorData() {
     if (request.status == 200) {
       console.log("Dit geeft de server terug:" + data);
       teller.aantal = data.aantalKnikkers;
+      poortIsOpen = data.poortIsOpen;
     }
     else {
-      console.log("server reageert niet zoals gehoopt");
+      console.log("server reageert niet zoals gehoopt:");
       console.log(request.response);
     }
   }
@@ -89,16 +101,16 @@ function stuurNieuweInstellingen() {
   var request = new XMLHttpRequest();
 
   // maak een http-verzoek
-  request.open('GET', '/api/set/data?wachttijd=' + wachtijdInput.value(), true)
+  request.open('GET', '/api/set/data?poortIsOpen=' + poortIsOpen, true)
 
   // wat uitvoeren als het antwoord teruggegeven wordt?
   request.onload = function () {
-    if (request.status == 200) {
+    if (request.status == 201) {
       // geeft positieve feedback in widget ofzo
       console.log("Server accepteerde instellingen.")
     }
     else {
-      console.log("server reageert niet zoals gehoopt.");
+      console.log("server reageert niet zoals gehoopt:");
       console.log(request.response);
     }
   }

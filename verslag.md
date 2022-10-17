@@ -16,6 +16,8 @@ Ons idee was om een knikkerbaan te maken die...
 
 ## Planning en evaluatie van sprints:
 
+*Schrijf hier per sprint een korte weergave van startplanning en de evaluatie aan het einde van de sprint*
+
 ### sprint 1
 
 ### sprint 2
@@ -25,10 +27,10 @@ Ons idee was om een knikkerbaan te maken die...
 
 
 ## Technische verantwoording
-Geef hier bijvoorbeeld de volgene informatie, maar voel je vrij er informatie aan toe te voegen.
-De Arduino werkt op de volgende manier:
-De knikkerbaan en de widget wisselen de volgende data met elkaar uit: 
-Uitdagingen die we tegenkwamen:
+UML-diagrammen van de zelfgemaakte klassen.
+Beschrijving van de werking van de knikkerbaan.
+Welke data wisselen de knikkerbaan en de widget met elkaar uit?
+Uitdagingen jullie tegenkwamen,
 
 
 ## Reflectie op opdracht
