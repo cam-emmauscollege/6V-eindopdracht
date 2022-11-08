@@ -11,9 +11,10 @@ tasks:
   - name: tailscale
     command: |
       if [ -n "${TAILSCALE_STATE_MYPROJECT}" ]; then
-        sudo -E tailscale up --accept-routes
+        sudo -E tailscale up --accept-routes --hostname "lesvoorbeeld"
       else
-        sudo -E tailscale up --accept-routes --hostname "gitpod-${GITPOD_GIT_USER_NAME// /-}-$(echo ${GITPOD_WORKSPACE_CONTEXT} | jq -r .repository.name)"
+        sudo -E tailscale up --accept-routes --hostname "lesvoorbeeld"
+        # "gitpod-${GITPOD_GIT_USER_NAME// /-}-$(echo ${GITPOD_WORKSPACE_CONTEXT} | jq -r .repository.name)"
         # store the tailscale state into gitpod user
         gp env TAILSCALE_STATE_MYPROJECT="$(sudo cat /var/lib/tailscale/tailscaled.state)"
       fi
